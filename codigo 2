@@ -1,0 +1,81 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+    class Desecho {
+        private String tipo;
+        private String nombre;
+
+        public Desecho(String tipo, String nombre) {
+            this.tipo = tipo;
+            this.nombre = nombre;
+        }
+
+        public String getTipo() {
+            return tipo;
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+    }
+
+    public class busqueda {
+        public static void main(String[] args) {
+            // Creamos una lista de desechos
+
+            /* |estos son ejemplos| ya que el programa maneja una base de datos que depende de la informacion de los usuarios.
+            en este espacio se almacenarian los distintos resultados usando la libreria de arrayList*/
+            List<Desecho> desechos = new ArrayList<>();
+            desechos.add(new Desecho("Plastico", "Botella de plástico"));
+            desechos.add(new Desecho("Plastico", "lis"));
+            desechos.add(new Desecho("Solido", "carton"));
+            desechos.add(new Desecho("Solido", "madera"));
+            desechos.add(new Desecho("Papel", "Papel de periódico"));
+            desechos.add(new Desecho("Papel", "papel para reutilizar"));
+            desechos.add(new Desecho("Organico", "Cáscara de plátano"));
+            desechos.add(new Desecho("Organico", "residiuos para fabricar composta"));
+            desechos.add(new Desecho("Reutilizable", "Bolsa de tela"));
+            desechos.add(new Desecho("Reutilizable", "papel para envolver"));
+
+            //Scanner para leer la entrada del usuario
+            Scanner sc = new Scanner(System.in);
+
+
+
+            //  En esta seccioó, le pedimos al usuario que introduzca el tipo de desecho a buscar, mostrando las opciones de busqueda avanzada
+            System.out.println("Introduce el tipo de desecho a buscar (Plastico, Solido, Papel, Organico, Reutilizable):");
+            String tipoBusqueda = sc.nextLine();
+
+            // Realizamos la búsqueda avanzada
+            List<Desecho> resultados = buscarDesechos(desechos, tipoBusqueda);
+
+            // Mostramos los resultados
+        
+            if (resultados.isEmpty()) { /*si los resultados de busqueda no coinciden */
+                System.out.println("No se encontraron resultados.");
+            } else {
+            
+                System.out.println("Resultados de la búsqueda:");
+                for (Desecho desecho : resultados) {
+                    System.out.println("Tipo: " + desecho.getTipo() + ", Nombre: " + desecho.getNombre());
+                }
+            }
+        }
+
+
+        // función 
+
+        public static List<Desecho> buscarDesechos(List<Desecho> lista, String tipo) {
+            List<Desecho> resultados = new ArrayList<>();
+
+            for (Desecho desecho : lista) {
+                // busqueda avanzada
+                if (desecho.getTipo().equalsIgnoreCase(tipo)) {
+                    resultados.add(desecho);
+                }
+            }
+
+            return resultados;
+        }
+    }
