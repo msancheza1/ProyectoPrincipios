@@ -1,0 +1,130 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner teclado=new Scanner(System.in);
+    int decision;
+    String opcion;
+
+    //decision Log in o Sign up
+    System.out.println("Log in (1) - Sign up (2)");
+    decision=teclado.nextInt();
+
+    //ciclo opcion no valida
+    while(decision!=1 && decision!=2){
+      System.out.println("Ingrese una opcion valida");
+      System.out.println("Log in (1) - Sign up (2)");
+      decision=teclado.nextInt();
+    }
+   
+    if(decision==1){  //ingresar
+      ingreso(teclado);
+    }
+    else{  //registrar
+      registro(teclado);
+      System.out.println("¿Desea ingresar?");
+        opcion=teclado.next();
+
+      if(opcion.equals("si")){
+        ingreso(teclado);
+      }
+    }
+  }
+
+  //funcion registro
+  public static void registro(Scanner teclado){
+    String nombre, correo, usuario, contrasena, contrasena2;
+    
+    //ingreso de datos para el registro
+    System.out.println("Ingrese los siguientes datos:");
+    System.out.println("Nombre completo:");
+      nombre=teclado.next();
+    System.out.println("Correo electronico:");
+      correo=teclado.next();
+    System.out.println("Numero celular:");
+      int celular=teclado.nextInt();
+    System.out.println("Ingresar un nombre de usuario:");
+      usuario=teclado.next();
+    System.out.println("Crea una contraseña:");
+      contrasena=teclado.next();
+    System.out.println("Repite tu contraseña:");
+      contrasena2=teclado.next();
+
+    //condicional contraseñas iguales
+    if(contrasena.equals(contrasena2)){
+      System.out.println("Registro exitoso");
+    }
+    else{
+      while(!contrasena.equals(contrasena2)){
+        System.out.println("Las contraseñas no coinciden");
+        System.out.println("Crea una contraseña:");
+          contrasena=teclado.next();
+        System.out.println("Repite tu contraseña:");
+          contrasena2=teclado.next();
+      }
+      System.out.println("Registro exitoso");
+    }
+  }
+
+  //funcion ingreso
+  public static void ingreso(Scanner teclado){
+    String contrasena, contrasena1, contrasena2, usuario, correo, actualizacioncontrasena, codigo;
+    int opcioncontrasena;
+
+    System.out.println("Ingrese su usuario:");
+      usuario=teclado.next();
+    System.out.println("Ingresar su contraseña (1) - Recuperar contraseña (2)");
+      opcioncontrasena=teclado.nextInt();
+
+    //ciclo opcion invalida
+    while(opcioncontrasena!=1 && opcioncontrasena!=2){
+      System.out.println("Ingrese una opcion valida");
+      System.out.println("Ingresar su contraseña (1) - Recuperar contraseña (2)");
+      opcioncontrasena=teclado.nextInt();
+    }
+    //condicional recuperar contraseña
+    if(opcioncontrasena==2){
+      System.out.println("Ingrese su correo o numero celular");
+        correo=teclado.next();
+      System.out.println("Ingrese el código que se le envió a su correo o numero celular");
+        codigo=teclado.next();
+
+      System.out.println("Recuperacion exitosa!!");
+      System.out.println("¿Desea actualizar contraseña?");
+      actualizacioncontrasena=teclado.next();
+
+      while(!actualizacioncontrasena.equals("si")&&!actualizacioncontrasena.equals("no")){
+        System.out.println("Ingrese una opcion valida (en minusculas)");
+        System.out.println("¿Desea actualizar contraseña?");
+          actualizacioncontrasena=teclado.next();
+      }
+
+      if(actualizacioncontrasena.equals("si")){
+        contrasena="a";
+        contrasena2="b";
+        while(!contrasena.equals(contrasena2)){
+          System.out.println("Ingrese su nueva contraseña:");
+            contrasena=teclado.next();
+          System.out.println("Repite tu nueva contraseña:");
+            contrasena2=teclado.next();
+
+          if(contrasena.equals(contrasena2)){
+            System.out.println("Contraseña actualizada");
+          }
+          else{
+            System.out.println("Las contraseñas no coinciden");
+          }
+        }
+        System.out.println("Ingreso exitoso");
+      }
+      else{
+          System.out.println("Ingreso exitoso");
+      }
+    }
+    else{
+      System.out.println("Ingrese su contraseña:");
+        contrasena=teclado.next();
+      System.out.println("Ingreso exitoso");
+    }
+  }
+} 
