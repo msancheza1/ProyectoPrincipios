@@ -1,0 +1,208 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean salir = false;
+
+        while (!salir) {
+            System.out.println("Menú:");
+            System.out.println("1. Ajustes");
+            System.out.println("2. Personalizar perfil");
+            System.out.println("3. Añadir oferta de residuos");
+            System.out.println("4. Recibir ofertas de residuos");
+            System.out.println("5. Salir");
+            System.out.println("Seleccione una opción: ");
+
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    ajustes(scanner);
+                    break;
+                case 2:
+                    personalizarPerfil(scanner);
+                    break;
+                case 3:
+                    añadirOfertaResiduos(scanner);
+                    break;
+                case 4:
+                    recibirOfertaResiduos(scanner);
+                    break;
+                case 5:
+                    salir = true;
+                    System.out.println("Adiós, ¡vuelve pronto!");
+                    break;
+                default:
+                    System.out.println("Opción no válida, por favor ingrese una opción válida.");
+            }
+        }
+    }
+
+    public static void ajustes(Scanner scanner) {
+        boolean salir = false;
+
+        while (!salir) {
+            System.out.println("Ajustes:");
+            System.out.println("1. Administrar cuenta");
+            System.out.println("4. Fecha, hora e idioma");
+            System.out.println("5. Cambiar fondo");
+            System.out.println("6. Políticas de privacidad");
+            System.out.println("7. Volver al menú principal");
+            System.out.println("Seleccione una opción: ");
+
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Opciones de administrar cuenta:");
+                    System.out.println("1. Cambiar usuario");
+
+                    System.out.println("Ingrese el nombre de usuario:");
+                    String nuevoUsuario = scanner.next();
+                    System.out.println("Usuario cambiado a: " + nuevoUsuario);
+                    break;  
+              case 2:
+                    System.out.println("2. Cambiar contraseña");
+                    System.out.println("Ingrese la contraseña actual:");
+                    String contraseñaActual = scanner.next(); 
+
+                    System.out.println("Ingrese la nueva contraseña:");
+                    String nuevaContrasena = scanner.next();
+                    System.out.println("Contraseña cambiada con éxito.");
+                    break;
+              case 3:
+                    System.out.println("3. Eliminar cuenta de usuario");
+
+                    System.out.println("Ingrese la cuenta actual:");
+                    String cuentaActual = scanner.next();
+                    System.out.println("Ingrese la contraseña de la cuenta actual:");
+                    String contrasenaCuentaActual = scanner.next();
+                    System.out.println("¿Está seguro de que desea eliminar su cuenta?");
+                    System.out.println("1. Sí");
+                    System.out.println("2. No");
+                    int confirmacion = scanner.nextInt();
+                    if (confirmacion == 1);
+                    System.out.println("Cuenta eliminada con éxito.");
+                    break;
+                
+                case 4:
+                    System.out.println("Fecha, hora e idioma:");
+                    System.out.print("Ingrese la hora: ");
+                    String hora = scanner.next();
+                    System.out.print("Ingrese el día: ");
+                    String dia = scanner.next();
+                    System.out.print("Ingrese el mes: ");
+                    String mes = scanner.next();
+                    System.out.print("Ingrese el año: ");
+                    String año = scanner.next();
+                    System.out.print("Ingrese el idioma: ");
+                    String idioma = scanner.next();
+                    break;
+                case 5:
+                    System.out.println("Cambiar fondo:");
+                    System.out.println("1. Fondo Azul");
+                    System.out.println("2. Fondo Rojo");
+                    System.out.println("3. Fondo Verde");
+                    System.out.println("4. Fondo Blanco");
+                    System.out.println("5. Fondo Negro");
+                    break;
+                case 6:
+                    System.out.println("Políticas de privacidad:");
+                    System.out.println("Esta página le informa sobre nuestras políticas con respecto a la recopilación, uso y divulgación de información personal cuando utiliza nuestro Servicio. Utilizamos su información personal para proporcionar y mejorar el Servicio. Al utilizar el Servicio, usted acepta la recopilación y el uso de información de acuerdo con esta política. A menos que se defina lo contrario en esta Política de Privacidad, los términos utilizados en esta Política de Privacidad tienen los mismos significados que en nuestros Términos y Condiciones");
+                    break;
+                case 7:
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida, por favor ingrese una opción válida.");
+            }
+        }
+    }
+
+    public static void personalizarPerfil(Scanner scanner) {
+        System.out.println("Personalizar perfil:");
+        System.out.println("Ingrese información para personalizar su perfil:");
+        System.out.print("Foto de perfil: ");
+        String fotoPerfil = scanner.next();
+
+        System.out.print("Breve descripción: ");
+        String descripcion = scanner.next();
+
+        System.out.print("Ubicación: ");
+        String ubicacion = scanner.next();
+
+        System.out.print("Redes sociales: ");
+        String redesSociales = scanner.next();
+
+        System.out.print("¿Desea guardar los datos? (Si/No): ");
+        String respuesta = scanner.next();
+
+        if (respuesta.equalsIgnoreCase("Si")) {
+            System.out.println("Los datos han sido guardados con éxito");
+        } else {
+            System.out.println("Los datos no han sido guardados");
+        }
+    }
+
+    public static void añadirOfertaResiduos(Scanner scanner) {
+        System.out.println("Añadir oferta de residuos:");
+        System.out.println("Ingrese información para añadir una oferta de residuos:");
+
+        System.out.println("Ingrese la imagen de la oferta:");
+        String imagen = scanner.next();
+
+        System.out.println("Ingrese la descripción del producto:");
+        String descripcion = scanner.next();
+
+        System.out.println("Ingrese el número de contacto:");
+        String contacto = scanner.next();
+
+        System.out.println("Ingrese las características del producto:");
+        String caracteristicas = scanner.next();
+
+        System.out.println("¿Desea montar la oferta? (Si/No)");
+        String respuesta = scanner.next();
+        if (respuesta.equalsIgnoreCase("Si")) {
+            System.out.println("Se montó la oferta.");
+        } else {
+            System.out.println("La oferta no se ha montado.");
+        }
+    }
+
+  public static void recibirOfertaResiduos(Scanner scanner) {
+      System.out.println("Recibir oferta de residuos:");
+      System.out.println("Bienvenido a la página principal");
+      System.out.println("Opciones:");
+      System.out.println("1. Buscar ofertas");
+      System.out.println("2. Volver al menú principal");
+      System.out.println("Seleccione una opción: ");
+    int opcion = scanner.nextInt();
+       switch (opcion) {
+            case 1:
+                buscarOferta(scanner);
+                break;
+            case 2:
+                volverAlMenuPrincipal(scanner);
+                break;
+            default:
+                System.out.println("Opción no válida.");
+                break;
+        }
+    }
+
+    public static void buscarOferta(Scanner scanner) {
+        
+        System.out.println("Buscando ofertas...");
+    }
+
+    public static void volverAlMenuPrincipal(Scanner scanner) {
+        
+        System.out.println("Volviendo al menú principal...");
+    }
+      
+          
+          
+    }
+      
+  
