@@ -1,0 +1,271 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Interfaz extends JPanel implements ActionListener {
+    private JButton jcomp1;
+    private JButton jcomp2;
+    private JLabel jcomp3;
+    private JLabel jcomp4;
+    private JLabel jcomp5;
+    private JLabel jcomp6;
+    private JTextField jcomp7;
+    private JLabel jcomp8;
+    private JLabel jcomp9;
+    private JLabel jcomp10;
+    private JTextField jcomp11;
+    private JPasswordField jcomp12;
+    private JTextField jcomp13;
+    private JLabel jcomp14;
+    private JComboBox<String> jcomp15;
+    private JButton jcomp16;
+    private JLabel jcomp17;
+    private JLabel jcomp18;
+    private JLabel jcomp19;
+    private JLabel jcomp20;
+    private JTextField jcomp21;
+    private JTextField jcomp22;
+    private JTextField jcomp23;
+    private JLabel jcomp24;
+    private JLabel jcomp25;
+    private JLabel jcomp26;
+    private JLabel jcomp27;
+    private JLabel jcomp28;
+    private JLabel jcomp29;
+    private JTextField jcomp30;
+    private JTextField jcomp31;
+    private JTextField jcomp32;
+    private JTextField jcomp33;
+    private JTextField jcomp34;
+    private JPasswordField jcomp35;
+    private JButton jcomp36;
+    private JButton jcomp37;
+    private JTextField jcomp38;
+    private JLabel jcomp39;
+    private JLabel jcomp40;
+    private JButton jcomp41;
+    private JRadioButton jcomp42;
+    private JButton jcomp43;
+    private JRadioButton jcomp44;
+    
+    private StringBuilder ofertarData;
+
+    public Interfaz() {
+         //construct preComponents
+        String[] jcomp15Items = {"Filtros:", "Plastico", "Carton", "Tela"};
+
+        //construct components
+        jcomp1 = new JButton("Registrarse");
+        jcomp2 = new JButton("Ingresar");
+        jcomp3 = new JLabel("Sign up");
+        jcomp4 = new JLabel("Nombre");
+        jcomp5 = new JLabel("Usuario");
+        jcomp6 = new JLabel("Contraseña");
+        jcomp7 = new JTextField(10);
+        jcomp8 = new JLabel("Log in");
+        jcomp9 = new JLabel("Usuario");
+        jcomp10 = new JLabel("Contraseña");
+        jcomp11 = new JTextField(10);
+        jcomp12 = new JPasswordField(10);
+        jcomp13 = new JTextField(10);
+        jcomp14 = new JLabel ("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        jcomp15 = new JComboBox (jcomp15Items);
+        jcomp16 = new JButton ("Buscar");
+        jcomp17 = new JLabel ("Agregar al carrito");
+        jcomp18 = new JLabel ("Nombre de donador");
+        jcomp19 = new JLabel ("Tamaño");
+        jcomp20 = new JLabel ("Tipo producto");
+        jcomp21 = new JTextField (5);
+        jcomp22 = new JTextField (5);
+        jcomp23 = new JTextField (5);
+        jcomp24 = new JLabel ("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        jcomp25 = new JLabel ("Ofertar");
+        jcomp26 = new JLabel ("Tipo producto");
+        jcomp27 = new JLabel ("Cantidad");
+        jcomp28 = new JLabel ("Fecha");
+        jcomp29 = new JLabel ("Descripcion");
+        jcomp30 = new JTextField (5);
+        jcomp31 = new JTextField (5);
+        jcomp32 = new JTextField (5);
+        jcomp33 = new JTextField (5);
+        jcomp34 = new JTextField (5);
+        jcomp35 = new JPasswordField (5);
+        jcomp36 = new JButton ("Agregar");
+        jcomp37 = new JButton ("Publicar");
+        jcomp38 = new JTextField (5);
+        jcomp39 = new JLabel ("Correo");
+        jcomp40 = new JLabel ("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        jcomp41 = new JButton ("Personalizar Perfil");
+        jcomp42 = new JRadioButton ("");
+        jcomp43 = new JButton ("Salir");
+        jcomp44 = new JRadioButton ("");
+        
+         //adjust size and set layout
+        setPreferredSize (new Dimension (671, 453));
+        setLayout (null);
+
+        // Initialize StringBuilder for ofertarData
+        ofertarData = new StringBuilder();
+
+         //add components
+        add(jcomp1);
+        add(jcomp2);
+        add(jcomp3);
+        add(jcomp4);
+        add(jcomp5);
+        add(jcomp6);
+        add(jcomp7);
+        add(jcomp8);
+        add(jcomp9);
+        add(jcomp10);
+        add(jcomp11);
+        add(jcomp12);
+        add(jcomp13);
+        add (jcomp14);
+        add (jcomp15);
+        add (jcomp16);
+        add (jcomp17);
+        add (jcomp18);
+        add (jcomp19);
+        add (jcomp20);
+        add (jcomp21);
+        add (jcomp22);
+        add (jcomp23);
+        add (jcomp24);
+        add (jcomp25);
+        add (jcomp26);
+        add (jcomp27);
+        add (jcomp28);
+        add (jcomp29);
+        add (jcomp30);
+        add (jcomp31);
+        add (jcomp32);
+        add (jcomp33);
+        add (jcomp34);
+        add (jcomp35);
+        add (jcomp36);
+        add (jcomp37);
+        add (jcomp38);
+        add (jcomp39);
+        add (jcomp40);
+        add (jcomp41);
+        add (jcomp42);
+        add (jcomp43);
+        add (jcomp44);
+        
+        //set component bounds (only needed by Absolute Positioning)
+        jcomp1.setBounds (160, 135, 105, 20);
+        jcomp2.setBounds (390, 95, 105, 20);
+        jcomp3.setBounds (125, 15, 100, 25);
+        jcomp4.setBounds (85, 42, 100, 25);
+        jcomp5.setBounds (85, 82, 100, 25);
+        jcomp6.setBounds (85, 103, 115, 20);
+        jcomp7.setBounds (165, 45, 95, 20);
+        jcomp8.setBounds (360, 15, 100, 25);
+        jcomp9.setBounds (315, 45, 100, 25);
+        jcomp10.setBounds (315, 65, 100, 25);
+        jcomp11.setBounds (395, 45, 95, 20);
+        jcomp12.setBounds (395, 65, 95, 20);
+        jcomp13.setBounds (95, 185, 310, 20);
+        jcomp14.setBounds (0, 160, 780, 25);
+        jcomp15.setBounds (415, 184, 80, 20);
+        jcomp16.setBounds (40, 182, 100, 25);
+        jcomp17.setBounds (30, 380, 100, 25);
+        jcomp18.setBounds (155, 360, 120, 25);
+        jcomp19.setBounds (300, 360, 100, 25);
+        jcomp20.setBounds (400, 360, 100, 25);
+        jcomp21.setBounds (145, 385, 135, 20);
+        jcomp22.setBounds (295, 385, 75, 20);
+        jcomp23.setBounds (395, 385, 95, 20);
+        jcomp24.setBounds (0, 325, 860, 25);
+        jcomp25.setBounds (25, 260, 100, 25);
+        jcomp26.setBounds (100, 240, 100, 25);
+        jcomp27.setBounds (220, 240, 100, 25);
+        jcomp28.setBounds (340, 240, 100, 25);
+        jcomp29.setBounds (445, 240, 100, 25);
+        jcomp30.setBounds (90, 265, 100, 25);
+        jcomp31.setBounds (310, 265, 100, 25);
+        jcomp32.setBounds (415, 265, 135, 50);
+        jcomp33.setBounds (200, 265, 100, 25);
+        jcomp34.setBounds (165, 65, 95, 20);
+        jcomp35.setBounds (165, 105, 95, 20);
+        jcomp36.setBounds (515, 380, 100, 25);
+        jcomp37.setBounds (560, 265, 100, 25);
+        jcomp38.setBounds (165, 85, 95, 20);
+        jcomp39.setBounds (85, 63, 100, 25);
+        jcomp40.setBounds (0, 215, 780, 25);
+        jcomp41.setBounds (310, 120, 120, 30);
+        jcomp42.setBounds (420, 125, 100, 25);
+        jcomp43.setBounds (610, 10, 100, 25);
+        jcomp44.setBounds (635, 10, 100, 25);
+        
+        // Adding action listeners
+        jcomp1.addActionListener(this);
+        jcomp2.addActionListener(this);
+        jcomp36.addActionListener(this);
+        jcomp37.addActionListener(this);
+        jcomp43.addActionListener(this); 
+        jcomp41.addActionListener(this); 
+        // Agregar acción para el botón de búsqueda
+        jcomp16.addActionListener(this); 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == jcomp1) {
+            // "Registrarse" 
+            String nombre = jcomp7.getText(); 
+            String usuario = jcomp11.getText(); 
+            char[] contrasena = jcomp12.getPassword(); 
+            
+            JOptionPane.showMessageDialog(this, "Registro exitoso: Name=" + nombre + ", Username=" + usuario);
+        } else if (e.getSource() == jcomp2) {
+            // "Ingresar" 
+            String usuario = jcomp13.getText(); 
+            char[] contrasena = jcomp35.getPassword(); 
+            
+            JOptionPane.showMessageDialog(this, "Ingreso exitoso: " + usuario);
+        } else if (e.getSource() == jcomp36) {
+            // "Agregar" en Ofertar
+            String tipoProducto = jcomp30.getText();
+            String cantidad = jcomp31.getText();
+            String fecha = jcomp32.getText();
+            String descripcion = jcomp33.getText();
+            
+            // Agregar datos a StringBuilder
+            ofertarData.append("Tipo producto: ").append(tipoProducto).append(", Cantidad: ").append(cantidad)
+                    .append(", Fecha: ").append(fecha).append(", Descripcion: ").append(descripcion).append("\n");
+            
+            JOptionPane.showMessageDialog(this, "Datos agregados correctamente.");
+        } else if (e.getSource() == jcomp37) {
+            JOptionPane.showMessageDialog(this, "Datos publicados correctamente:\n" + ofertarData.toString());
+        } else if (e.getSource() == jcomp41) {
+            // "Personalizar Perfil"
+            String personalizacion = JOptionPane.showInputDialog(this, "¿Qué deseas personalizar?");
+            if (personalizacion != null && !personalizacion.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Personalización seleccionada: " + personalizacion);
+            } else {
+                JOptionPane.showMessageDialog(this, "No se ha seleccionado ninguna personalización.");
+            }
+        } else if (e.getSource() == jcomp43) {
+            // "Salir" 
+            System.exit(0);
+        } else if (e.getSource() == jcomp16) {
+            // "Buscar"
+            String filtro = (String) jcomp15.getSelectedItem(); 
+            String busqueda = jcomp38.getText(); 
+
+            JOptionPane.showMessageDialog(this, "Búsqueda realizada:\nFiltro: " + filtro + "\nTérmino de búsqueda: " + busqueda);
+        }
+        // ... (handle other button events)
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Interfaz");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(new Interfaz());
+        frame.pack();
+        frame.setVisible(true);
+    }
+}
+
