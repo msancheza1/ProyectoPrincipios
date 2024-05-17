@@ -1,0 +1,59 @@
+package Inicio;
+
+ import java.io.File;
+import java.io.IOException;
+import java.io.FileWriter;
+
+public class Usuario {
+   
+   private String usuario;
+private String contrasena;
+
+    public Usuario(String usuario, String contrasena) {
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+
+    //metodo guardar usuario
+    
+   
+    public static void guardarUsuario(Usuario u){
+    
+        try {
+            File ficheroDatos = new File("datos.txt");   
+            if (!ficheroDatos.exists()) {
+            ficheroDatos.createNewFile();
+                System.out.println("Fichero "+ ficheroDatos.getName() +" creado");
+            } 
+                //escritor de archivos
+                System.out.println(u.getContrasena() + u.getUsuario());
+              FileWriter escritorDeFichero = new FileWriter("datos.txt", true);            
+            escritorDeFichero.write(u.getUsuario() +  "," + u.getContrasena() + "\n");
+            escritorDeFichero.close();
+            System.out.println("Fichero escrito con éxito.");  
+                
+       
+            
+        }catch(IOException error){
+            System.out.println("Error en el fichero");
+            error.printStackTrace();
+        } 
+    
+    }
